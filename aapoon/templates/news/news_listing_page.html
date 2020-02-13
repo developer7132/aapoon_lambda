@@ -22,8 +22,21 @@
                         </div>
                     </div>
                 {% endfor %}
-            </div>    
-            <a href="{% routablepageurl page 'latest_posts' %}">view latest post</a>
+            </div>  
+            <div class="paginate">
+                <ul class="pagination">
+                    {% if posts.has_previous %}
+                      <li><a href="?page={{ posts.previous_page_number }}"><i class="fa fa-angle-left"></i></a></li>
+                    {% endif %}
+                    {% for page_num in posts.paginator.page_range %}
+                      <li {% if page_num == posts.number %} class="active" {% endif %}><a href="?page={{ page_num }}">{{ page_num }}</a></li>
+                    {% endfor %}
+                    {% if posts.has_next %}
+                      <li><a href="?page={{ posts.next_page_number }}"><i class="fa fa-angle-right"></i></a></li>
+                    {% endif %}
+                  </ul>
+            </div>
+            
         </div> <!-- end container -->
     </section>
     <!-- end featured -->

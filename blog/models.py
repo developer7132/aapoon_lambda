@@ -1,5 +1,6 @@
 from django.db import models
 from django.shortcuts import render
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 from wagtail.core.models import Page
 from wagtail.core.fields import RichTextField, StreamField
@@ -23,12 +24,25 @@ class BlogListingPage(RoutablePageMixin, Page):
     ]
     def get_context(self, request, *args, **kwargs):
         context = super().get_context(request, *args, **kwargs)
-        context["posts"] = BlogDetailPage.objects.live().public()
+        all_posts = BlogDetailPage.objects.live().public()
+        paginator = Paginator(all_posts, 9) # Show 9 resources per page
+        page = request.GET.get('page')
+        try:
+            resources = paginator.page(page)
+        except PageNotAnInteger:
+            # If page is not an integer, deliver first page.
+            resources = paginator.page(1)
+        except EmptyPage:
+            # If page is out of range (e.g. 9999), deliver last page of results.
+            resources = paginator.page(paginator.num_pages)
+
+        # make the variable 'resources' available on the template
+        context['posts'] = resources
         return context
     @route(r'^latest/$', name = 'latest_posts')
     def latest_blog_posts(self, request, *args, **kwargs):
         context = self.get_context(request, *args, **kwargs)
-        context["latest_posts"] = BlogDetailPage.objects.live().public()[:3]
+        context["latest_posts"] = BlogDetailPage.objects.live().public()[:9]
         return render(request, "blog/latest_post.html", context)
 class BlogDetailPage(Page):
     custom_title = models.CharField(

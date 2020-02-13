@@ -5,6 +5,22 @@
   width: 80%;
   padding: 25px 0;
 }
+.card{
+  padding: 20px 0;
+}
+.headquarter{
+  text-align: left;
+}
+.headquarter h1{
+  margin: 35px 0;
+}
+.paginate{
+  text-align: center;
+}
+.m-t-b-25{
+  margin-bottom: 25px;
+    margin-top: 25px;
+}
 .summary-content{
   text-align: left;
   font-size: 18px;
@@ -167,6 +183,10 @@
   margin-left: 20px;
 }
 @media (max-width: 992px){
+  .col-md-4{
+    padding-left: 45px;
+    padding-right: 45px;
+  }
   .contact-form >li >input, .contact-form >li >select, .contact-form >li >label, .contact-form >li >textarea{
     width: 100%;
   }
@@ -220,6 +240,9 @@
   padding: 115px 0;
 }
 @media (min-width: 992px){
+  .col-md-4 img{
+    width: 100%;
+  }
   .invest-container{
     width: 80%;
     max-width: 80%;
@@ -236,10 +259,13 @@
     font-size: 20px;
     background-color: #00547f;
     color: #fff;
-    padding: 20px 150px;
+    padding: 20px 0;
     margin-top: 50px;
-    display: -webkit-inline-box;
+    display: block;
+    width: 100%;
     max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
   }
   .mobile-logo{
     display: none;

@@ -23,7 +23,7 @@ class HomeImageSlide(blocks.StructBlock):
 class Faq(blocks.StructBlock):
     #Homepage image slide section
     title = blocks.CharBlock(required=True, help_text='Add your title')
-    content = blocks.TextBlock(required=True, help_text='Add additional text')
+    content = blocks.RichTextBlock()
     class Meta:
         template = "streams/faq.html"
         icon = "edit"
