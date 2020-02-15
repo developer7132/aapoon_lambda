@@ -46,20 +46,19 @@ class NewsListingPage(RoutablePageMixin, Page):
         return render(request, "news/latest_news.html", context)
 class NewsDetailPage(Page):
     custom_title = models.CharField(
-        max_length=100,
+        max_length=200,
         blank=False,
         null=False,
         help_text='Overwrites the default title',
     )
     news_image = models.ForeignKey(
         "wagtailimages.Image",
-        blank=False,
+        blank=True,
         null=True,
         related_name="+",
         on_delete=models.SET_NULL,
     )
-    summary = models.CharField(
-        max_length=200,
+    summary = models.TextField(
         blank=False,
         null=False,
         help_text='Overwrites the default title',

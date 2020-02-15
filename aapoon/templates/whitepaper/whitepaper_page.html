@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load wagtailcore_tags %}
 {% load wagtailimages_tags %}
-
+{% load static %}
 {% block content %}
     
     {% image self.head_image fill-900x400 as banner %}
@@ -20,7 +20,7 @@
             </div>
             <div class="line-full-width"></div>
             <div class = "download">
-                <a href="https://aapoon.com/wp-content/uploads/2019/06/SocialChains-Introduction.pdf" class="download-whitepaper">DOWNLOAD WHITEPAPER</a>
+                <a href="{% static 'doc/SocialChains-Introduction.pdf' %}" class="download-whitepaper">DOWNLOAD WHITEPAPER</a>
             </div>
             
     </section>
