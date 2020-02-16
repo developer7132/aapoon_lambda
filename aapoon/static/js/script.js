@@ -1366,10 +1366,12 @@
     /*----------------------------------------------------
         = TRANSPORT FAQ ACCRODIAN TOGGLE CALSS
     --------------------------------------------------------*/  
-    if ($(".transport-faq #accordion").length) {
-        var panelHeading = $(".transport-faq #accordion .panel-heading > a");
+    if ($("#accordion").length) {
+        var panelHeading = $("#accordion > div > div > a");
         
         panelHeading.on("click", function() {
+            $(".subtitle").addClass('collapsed');
+            $(".subcontent").removeClass('in');
             var $this = $(this);
             if (!$this.closest(".panel").hasClass("current")) {
                 $this.closest(".panel").addClass("current");
@@ -1380,7 +1382,6 @@
             $this.closest(".panel").siblings().removeClass("current");
         });
     }
-
 
     /*------------------------------------------
         = TRANSPORT TESTIMONIAL SLIDER

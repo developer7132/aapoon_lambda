@@ -12,7 +12,6 @@ class HomeCard(blocks.StructBlock):
         icon = "edit"
         label = "Title & Text"
 class HomeImageSlide(blocks.StructBlock):
-    #Homepage image slide section
     title = blocks.CharBlock(required=True, help_text='Add your title')
     subtitle = blocks.TextBlock(required=True, help_text='Add additional text')
     image = ImageChooserBlock(required=True, help_text='Upload slide image')
@@ -21,10 +20,16 @@ class HomeImageSlide(blocks.StructBlock):
         icon = "edit"
         label = "Image & text"
 class Faq(blocks.StructBlock):
-    #Homepage image slide section
-    title = blocks.CharBlock(required=True, help_text='Add your title')
-    content = blocks.RichTextBlock()
+    category = blocks.CharBlock(required=True, help_text='Add your title')
+    content = blocks.ListBlock(
+        blocks.StructBlock(
+            [
+                ("question", blocks.CharBlock(required=True, max_length='200', help_text='Add your title')),
+                ("answer", blocks.RichTextBlock()),
+            ]
+        )
+    )
     class Meta:
         template = "streams/faq.html"
-        icon = "edit"
+        icon = "placeholder"
         label = "FAQ"

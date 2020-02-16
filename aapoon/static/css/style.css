@@ -1,6 +1,9 @@
 @charset "UTF-8";
 
 /* Custom CSS  */
+.subdetails{
+  padding-left: 20px;
+}
 .navbar-nav >li .active{
   border-bottom: 1px solid #025581!Important;
   padding-bottom: 10px!Important;
