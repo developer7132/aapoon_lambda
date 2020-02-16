@@ -14,8 +14,9 @@
             <div class="row">
                 {% for post in posts %}
                     {% image post.news_image fill-286x180 as post_img %}
-                    <div class="col col-lg-4 col-xs-6">
-                        <div class="card fadeInUpSlow" style="width: 18rem;">
+                    {% cycle '<div class="col col-lg-4">' '' ''%}
+                   
+                        <div class="card fadeInUpSlow">
                             <a href="{{post.url}}">
                                 {% if post_img.url != null %}
                                     <img class="card-img-top" src="{{post_img.url}}" alt="Card image cap">
@@ -27,8 +28,11 @@
                             <a href="{{post.url}}" class="btn btn-primary">Read More</a>
                             </div>
                         </div>
-                    </div>
+                    {% cycle '' '' '</div>' %}
                 {% endfor %}
+                        {% if row_cycle != 'end' %}
+                            </div>
+                        {% endif %}
             </div>  
             <div class="paginate">
                 <ul class="pagination">

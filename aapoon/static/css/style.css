@@ -1,6 +1,10 @@
 @charset "UTF-8";
 
 /* Custom CSS  */
+.navbar-nav >li .active{
+  border-bottom: 1px solid #025581!Important;
+  padding-bottom: 10px!Important;
+}
 .invest-banner{
   width: 80%;
   padding: 25px 0;

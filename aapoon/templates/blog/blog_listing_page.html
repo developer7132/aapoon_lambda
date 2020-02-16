@@ -2,7 +2,7 @@
 {% load wagtailimages_tags wagtailroutablepage_tags %}
 
 {% block content %}
- 
+
     <!-- start featured -->
     <section class="featured section-padding" id="service">
         <div class="container">
@@ -11,11 +11,13 @@
                     B L O G
                 </h1>
             </div>
-            <div class="row">
+            <div class="col">
+                
                 {% for post in posts %}
                     {% image post.blog_image fill-286x180 as post_img %}
-                    <div class="col col-lg-4 col-xs-6">
-                        <div class="card fadeInUpSlow" style="width: 18rem;">
+                    <div class="row col-lg-4 col-xs-6">
+                        <div class="card fadeInUpSlow">
+                            
                             <a href="{{post.url}}">
                                 {% if post_img.url != null %}
                                 <img class="card-img-top" src="{{post_img.url}}" alt="Card image cap">
@@ -29,6 +31,7 @@
                         </div>
                     </div>
                 {% endfor %}
+                </div>
             </div>    
             <div class="paginate">
                 <ul class="pagination">
@@ -45,6 +48,5 @@
             </div>
         </div> <!-- end container -->
     </section>
-    
     <!-- end featured -->
 {% endblock content %}
