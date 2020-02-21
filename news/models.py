@@ -2,6 +2,7 @@ from django.db import models
 from django.shortcuts import render
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
+from wagtail.search import index
 from wagtail.core.models import Page
 from wagtail.core.fields import RichTextField, StreamField
 from wagtail.admin.edit_handlers import FieldPanel, PageChooserPanel, StreamFieldPanel
@@ -65,6 +66,10 @@ class NewsDetailPage(Page):
         default="Input the summary...",
     )    
     content = RichTextField(default='Input here...')
+    search_fields = Page.search_fields + [ # Inherit search_fields from Page
+        index.SearchField('summary'),
+        index.SearchField('content'),
+    ]
     content_panels = Page.content_panels + [
         FieldPanel("custom_title"),
         ImageChooserPanel("news_image"),

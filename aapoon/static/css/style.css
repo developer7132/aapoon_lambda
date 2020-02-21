@@ -1,6 +1,89 @@
 @charset "UTF-8";
 
 /* Custom CSS  */
+.nav-header-flex{
+  display: flex;
+}
+#navbar{
+  margin-left: auto;
+}
+.searchbardiv{
+  width: 750px;
+  position: fixed;
+  display: block;
+  /* background: #00547f; */
+  top: 20px;
+  margin-left: 328px;
+  z-index: 1001;
+  max-width: 100%;
+  padding: 10px;
+	
+}
+.buttonsearch{
+	margin: 13px 24px 0;
+    color: #00547f;
+    position: relative;
+    background-color: transparent;
+    border: 0px;
+    display: block;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    margin-left: 20px;
+}
+.buttonsearch:hover{
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	border: 0px;
+
+}
+.buttonsearch:focus{
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	border: 0px;
+
+}
+#formsearch{
+	display: none;
+}
+.glyphicon.glyphicon-search {
+	font-size: 18px;
+}
+#searchbox {
+  border: none;
+	box-shadow: none;
+	padding: 8px 14px;
+}
+#searchbox:hover {
+	box-shadow: none;
+}
+
+#searchsubmit{
+  border: none;
+  background-color: #00547f;
+  color: #fff;
+  border-radius: 7px;
+}
+
+
+
+
+
+
+
+
+
+
+
+.footer-social-links >li{
+
+  font-size: 10px;
+}
+.invest-btn{
+  background-color: #00547f;
+  color: #fff !important;
+}
 .subdetails{
   padding-left: 20px;
 }
@@ -229,6 +312,7 @@
   }
   .footer-social-links >li{
     padding: 20px 10px;
+    font-size: 20px
   }
   .footer-site-map{
     float: none;
@@ -285,7 +369,7 @@
 
   }
   #login{
-    margin-left: 200px;
+    margin-left: 100px;
   }
   .discription-row p{
     font-size: 20px;

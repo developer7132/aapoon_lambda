@@ -17,15 +17,16 @@
                     {% cycle '<div class="col col-lg-4">' '' ''%}
                    
                         <div class="card fadeInUpSlow">
-                            <a href="{{post.url}}">
-                                {% if post_img.url != null %}
-                                    <img class="card-img-top" src="{{post_img.url}}" alt="Card image cap">
-                                {% endif %}
-                            </a>
+                            
                             <div class="card-body">
-                            <h5 class="card-title">{{post.custom_title}}</h5>
-                            <p class="card-text">{{post.summary | safe}}</p>
-                            <a href="{{post.url}}" class="btn btn-primary">Read More</a>
+                                <a href="{{post.url}}">
+                                    {% if post_img.url != null %}
+                                        <img class="card-img-top" src="{{post_img.url}}" alt="Card image cap">
+                                    {% endif %}
+                                </a>
+                                <h5 class="card-title">{{post.custom_title}}</h5>
+                                <p class="card-text">{{post.summary | safe}}</p>
+                                <a href="{{post.url}}" class="btn btn-primary">Read More</a>
                             </div>
                         </div>
                     {% cycle '' '' '</div>' %}

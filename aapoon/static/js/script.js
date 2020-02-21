@@ -1,6 +1,23 @@
 (function($) {
 
 	"use strict";
+    $('#buttonsearch').click(function(){
+        $('#formsearch').slideToggle( "slow",function(){
+             $( '#content' ).toggleClass( "moremargin" );
+        } );
+        $('#searchbox').focus()
+        $('.openclosesearch').toggle();
+        $('.navbar-nav').toggle();
+    });
+
+    // Animated scroll specific section
+    if ($("#scroll").length) {
+        $('#scroll').on('click', function(e){     
+            e.preventDefault();
+            $('html,body').animate({scrollTop:$(this.hash).offset().top}, 1000, "easeInOutExpo");
+            return false;
+        });
+    }
 
     // Animated scroll specific section
     if ($("#scroll").length) {
