@@ -24,10 +24,10 @@
                             <button class="dropdown-toggle navbar-dropdown" type="button" data-toggle="dropdown">Resources
                             <span class="caret"></span></button>
                             <ul class="dropdown-menu ">
-                              <li><a href="/whitepaper">WHITEPAPER</a></li>
-                              <li><a href="/blog">BLOG</a></li>
+                              <li><a href="/whitepaper">whitepaper</a></li>
+                              <li><a href="/blog">Blog</a></li>
                               <li><a href="/faq">FAQ</a></li>
-                              <li><a href="/contact-form">CONTACT</a></li>
+                              <li><a href="/contact-form">Contact</a></li>
                             </ul>
                         </li>
                         <li><a href="/invest" class="{% if self.title == 'Invest' %} active {% endif %}">Invest</a></li>
@@ -43,12 +43,6 @@
 				<form role="search" method="get" id="searchform" action = "{% url 'search' %}" >
 					<div class="input-group">
 						<input type="text" id="searchbox" class="form-control" name="query" {% if search_query %} value="{{ search_query }}"{% endif %} id="query" placeholder="Search...">
-						<div class="input-group-btn">
-							<button class="btn btn-default"  id="searchsubmit" value="Search"  type="submit">
-								<strong>Search</strong>
-							</button>
-							
-						</div>
 					</div>
 				</form>
 

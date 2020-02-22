@@ -1,6 +1,70 @@
 (function($) {
 
-	"use strict";
+    "use strict";
+    function Validation($this){
+        var value = $this.val();
+        if($this.parent().has('span')){ $this.parent().find('span').remove(); }
+
+        if($this.parent().has('.error-message')){ $this.parent().find('.error-message').remove(); }
+
+        if(value.length == 0){ 
+            $this.parent().prepend("<span class='fa fa-exclamation error-status'></span>");
+            $this.parent().append("<div class='error-message' style='color:red;padding:10px;'>This is a required field</span>");
+            $this.removeClass('no-error-element');
+            $this.addClass('error-element');
+            return false
+        }else if(($this.attr('id') == 'id_email' && !value.match(/^[A-Za-z\._\-[0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/))){
+            $this.parent().prepend("<span class='fa fa-exclamation error-status'></span>");
+            $this.parent().append("<div class='error-message' style='color:red;padding-10px;'>Please enter a valid email address!</span>");
+            $this.removeClass('no-error-element');
+            $this.addClass('error-element');
+            return false
+        }
+
+        $this.parent().prepend("<span class='fa fa-check-circle no-error'></span>");
+        $this.removeClass('error-element');
+        $this.addClass('no-error-element');
+        return true
+        
+    }
+    function FullValidation(){
+        if(Validation($('#id_name')) && Validation($('#id_email')) && Validation($('#id_message'))){
+            $('.submit-button').removeClass('disable-button');
+            $('.submit-button').prop('disabled', false);
+            $('.error-message').remove();
+        }
+        else{
+            $('.submit-button').addClass('disable-button');
+            $('.submit-button').prop('disabled', true);
+            if($('.submit-content').has('.error-message').length==0)
+                $('.submit-content').append("<div class='error-message' style='color:red;padding-10px;'>Please correct errors before submitting this form.</span>");
+
+        }
+    }
+    $('#id_name').keyup(function(){
+        Validation($(this));
+        FullValidation();
+    })
+    $('#id_name').focusout(function(){
+        Validation($(this));
+        FullValidation();
+    });
+    $('#id_email').keyup(function(){
+        Validation($(this));
+        FullValidation();
+    });
+    $('#id_email').focusout(function(){
+        Validation($(this));
+        FullValidation();
+    });
+    $('#id_message').keyup(function(){
+        Validation($(this));
+        FullValidation();
+    });
+    $('#id_message').focusout(function(){
+        Validation($(this));
+        FullValidation();
+    });
     $('#buttonsearch').click(function(){
         $('#formsearch').slideToggle( "slow",function(){
              $( '#content' ).toggleClass( "moremargin" );
@@ -1654,10 +1718,7 @@
             sortingCharityGallery();
 
             // Set FAQ section's two col equal height
-            if ($(".faq").length) {
-                setTwoColEqHeight($(".faq .left-col"), $(".faq .right-col"));
-            }
-
+            
             // Set architects-blog post two coloumn equal height
             if ($(".architects-blog").length) {
                 setTwoColEqHeight($(".architects-blog .post .entry-media"), $(".architects-blog .post .entry-body"));
@@ -1673,10 +1734,6 @@
             }
 
             // Set transport FAQ section's two col equal height
-            if ($(".transport-faq").length) {
-                setTwoColEqHeight($(".transport-faq .left-col"), $(".transport-faq .right-col"));
-            }
-
             // Call the transport map function
             if ($("#transport-location-map").length) {
                 transportMap();

@@ -12,17 +12,17 @@ ALLOWED_HOSTS = ['*']
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 
-EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST = 'mail.smtp2go.com'
 
 EMAIL_PORT = 587
 
-EMAIL_HOST_USER = 'paulkatok77@gmail.com'
+EMAIL_HOST_USER = 'omerpucit@technodevs.com'
 
-EMAIL_HOST_PASSWORD = 'Paulkat17@'
+EMAIL_HOST_PASSWORD = 'VqsfKEZPHdNB'
 
-DEFAULT_FROM_EMAIL = 'paulkatok77@gmail.com'
+DEFAULT_FROM_EMAIL = 'omerpucit@technodevs.com'
 
-DEFAULT_TO_EMAIL = 'mahdi.abolhassani@outlook.com'
+DEFAULT_TO_EMAIL = 'paulkatok77@gmail.com'
 
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False

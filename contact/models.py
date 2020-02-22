@@ -56,13 +56,10 @@ class ContactPage(AbstractEmailForm):
         recipient_list = [x.strip() for x in self.to_address.split(',')]
         content = []
         for field in form:
+            label = ''.join(e for e in field.label if e.isalnum())
             value = field.value()
             if isinstance(value, list):
                 value = ', '.join(value)
-            content.append('{}: {}'.format(field.label, value))
+            content.append('{} : {}'.format(label, value))
         content = '\n'.join(content)
-        mail_title = 'Test Email'
-        message = 'This is a test email.' 
-        email = settings.DEFAULT_FROM_EMAIL
-        recipients = [settings.DEFAULT_TO_EMAIL]
-        send_mail(mail_title, message, self.from_address, recipients, fail_silently=False) 
+        send_mail(self.subject, content, self.from_address, recipient_list, fail_silently=False) 

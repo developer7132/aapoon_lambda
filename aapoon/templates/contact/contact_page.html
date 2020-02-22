@@ -7,7 +7,7 @@
 <section class="section-padding">
     <div class="container">
         <div class="head-short">
-            <h1 style="color: #fff; letter-spacing: 20px;">
+            <h1>
                 CONTACT US
             </h1>
         </div>
@@ -22,11 +22,16 @@
                 {{self.summary | safe}}
             </p>
         </div>
-        <form action="{% pageurl page %}" method="POST" class="contact-form">
-            {% csrf_token %}
-            {{ form.as_ul }}
-            <input type="submit" class="submit-button">
-        </form>
+        <div class="row">
+            <form action="{% pageurl page %}" method="POST" class="contact-form col-md-6">
+                {% csrf_token %}
+                {{ form.as_ul }}
+                <div class="submit-content">
+                    <input type="submit" class="submit-button disable-button" disabled>
+                </div>
+                
+            </form>
+        </div>
         <div class="line-full-width"></div>
         <div class="row m-t-b-25">
             <div class="col col-md-6 right-col">
