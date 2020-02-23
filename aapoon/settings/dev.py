@@ -22,7 +22,6 @@ EMAIL_HOST_PASSWORD = 'VqsfKEZPHdNB'
 
 DEFAULT_FROM_EMAIL = 'omerpucit@technodevs.com'
 
-DEFAULT_TO_EMAIL = 'paulkatok77@gmail.com'
 
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False

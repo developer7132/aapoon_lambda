@@ -1,5 +1,8 @@
 @charset "UTF-8";
 
+.card-img-top{
+  width: 100%;
+}
 .error-status{
   background: #e80000;
     color: #fff;
@@ -260,8 +263,10 @@
 /* End Contact Page CSS */
 @media(max-width:992px){
   .dropdown-toggle{
+    background: transparent;
     padding: 10px 15px 10px 35px;
     color: #000;
+    border: 0;
   }
 }
 @media(min-width:992px){
