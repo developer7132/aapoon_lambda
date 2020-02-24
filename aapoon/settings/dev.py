@@ -12,15 +12,15 @@ ALLOWED_HOSTS = ['*']
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 
-EMAIL_HOST = 'mail.smtp2go.com'
+EMAIL_HOST = 'email-smtp.us-east-1.amazonaws.com'
 
 EMAIL_PORT = 587
 
-EMAIL_HOST_USER = 'omerpucit@technodevs.com'
+EMAIL_HOST_USER = 'AKIAJPSJZGQDB6C66F7A'
 
-EMAIL_HOST_PASSWORD = 'VqsfKEZPHdNB'
+EMAIL_HOST_PASSWORD = 'AotGAAbX6wuOaKL4LUkAFWI8IKCpQqfGlpgSAY5Nu0PO'
 
-DEFAULT_FROM_EMAIL = 'omerpucit@technodevs.com'
+DEFAULT_FROM_EMAIL = 'admin@aapoon.com'
 
 
 EMAIL_USE_TLS = True

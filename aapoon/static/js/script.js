@@ -1,15 +1,15 @@
 (function($) {
 
     "use strict";
-    // $('.contact-form').submit(function(e){
-    //     // e.preventDefault();
-    //     // this.submit();
-    //     // this.reset();
-    //     // $('#id_name').val('');
-    //     // $('#id_email').val('');
-    //     // $('#id_message').val('');
-    //     // $('.submit-button').prop('disabled', true);
-    // });
+    $('.contact-form').submit(function(e){
+        e.preventDefault();
+        this.submit();
+        // this.reset();
+        $('#id_name').val('');
+        $('#id_email').val('');
+        $('#id_message').val('');
+        $('.submit-button').prop('disabled', true);
+    });
     function Validation($this){
         var value = $this.val();
         if($this.parent().has('span')){ $this.parent().find('span').remove(); }

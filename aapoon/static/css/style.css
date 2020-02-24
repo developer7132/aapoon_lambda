@@ -283,7 +283,7 @@
   padding: 20px;
 }
 .download-whitepaper{
-  padding: 31px;
+    padding: 25px;
     color: #ffffff!important;
     border-width: 0px!important;
     border-color: #1d1d1d;
@@ -2017,6 +2017,9 @@ a:focus {
 
 .feauted-grid p {
   margin: 0;
+}
+.feauted-grid p:nth-child(2) {
+  padding-bottom: 31px !important;
 }
 
 /*** pricing grid ***/
