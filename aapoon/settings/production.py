@@ -18,10 +18,6 @@ DATABASES = {
 }
 
 
-# AWS_S3_REGION_NAME = 'us-east-1'  # e.g. us-east-2
-# AWS_ACCESS_KEY_ID = 'AKIAJ7TMDOP2VMB4MCYQ'
-# AWS_SECRET_ACCESS_KEY = '0LkyGQX0NTTHx4ceqzd0zPqSDjKq3hVMQbO+ak8A'
-
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_S3_BUCKET_NAME
 STATIC_URL = "https://%s/" % AWS_S3_CUSTOM_DOMAIN
 STATICFILES_STORAGE = 'django_s3_storage.storage.ManifestStaticS3Storage'
