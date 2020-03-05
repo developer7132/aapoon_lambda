@@ -3,6 +3,10 @@
 .card-img-top{
   width: 100%;
 }
+
+.pd-tp-76{
+  padding: 76px 0 0 0;
+}
 .error-status{
   background: #e80000;
     color: #fff;
@@ -204,6 +208,7 @@
   padding-left: 20px;
 }
 .invest-summary >p{
+  padding: 0 15px;
   font-size: 18px;
   text-align: left;
 }
@@ -316,7 +321,7 @@
 }
 .head-short{
   background-position: bottom center;
-    background-image: url(../../../media/original_images/Heade_short.png);
+    background-image: url(../../../images/Heade_short.png);
     background-color: #e5e5e5;
     background-size: cover;
     padding-top: 7%;
@@ -2018,7 +2023,7 @@ a:focus {
 .feauted-grid p {
   margin: 0;
 }
-.feauted-grid p:nth-child(2) {
+.home-intro-section .col:nth-child(2) .feauted-grid p{
   padding-bottom: 31px !important;
 }
 
@@ -8345,7 +8350,7 @@ footer .twitter-post-widget .date {
 
 .faq .right-col .panel-body {
   background-color: transparent;
-  padding: 35px 15px 15px 0;
+  padding: 15px 15px 15px 0;
   overflow: hidden;
 }
 
@@ -8375,7 +8380,7 @@ footer .twitter-post-widget .date {
 }
 
 .faq .right-col .panel-body .details {
-  width: 77%;
+  width: 90%;
   float: right;
 }
 

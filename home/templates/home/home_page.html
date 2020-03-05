@@ -45,36 +45,27 @@
     
     
     <!-- start faq-->
-        <div class="container section-padding">
-            
+        <div class="container">
             <div class="row">
-                <div class="col col-md-6 right-col">
                     <div class="discription-row">
                         <p>
                             {{self.video_section_subscribe | safe}}
                         </p>
                     </div>
-                </div>
-
-                <div class="col col-md-6 left-col">
-                    <div class="embed-responsive embed-responsive-16by9">
-                        <iframe width="396" height="223" src="https://www.youtube.com/embed/cq3r2zbscqE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>" allowfullscreen></iframe>
-                      </div>
-                </div>
-            </div> <!-- end row -->
+            </div> 
             
             <div class="line"></div>
-        </div> <!-- end container -->
+        </div> 
     <!-- end faq-->
 
 
     <!-- start featured -->
-    <section class="featured section-padding" id="service">
+    <section class="featured pd-tp-76" id="service">
         <div class="container">
             <div class="row section-title">
                 <h2>{{self.card_title}}</h2>
             </div> 
-            <div class="row">
+            <div class="row home-intro-section">
                 {% for card in page.cards %}
                     {% include_block card %}
                 {% endfor %}
@@ -88,12 +79,13 @@
                             <img src="{% static 'images/google-play.png' %}" alt="" title="" >
                         </a>
                     </div>
-                    <a class="invest-btn" href="https://investors.socialchains.io/" target="_blank">
+                    <!-- <a class="invest-btn" href="https://investors.socialchains.io/" target="_blank">
                         <span>
                             I N V E S T
                         </span>
-                    </a>
+                    </a> -->
             </div>
+            <div class="line"></div>
         </div> <!-- end container -->
     </section>
     <!-- end featured -->
